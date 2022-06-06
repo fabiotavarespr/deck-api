@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:14
+    container_name: database
+    networks:
+      - deck-api
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./scripts/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -p 5432 -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  deck-api:
+    build: .
+    container_name: api
+    networks:
+      - deck-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    links:
+      - db
+
+networks:
+  deck-api:
+    name: deck-api

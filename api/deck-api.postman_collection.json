@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "d4e33ae1-c4a4-429e-b453-6220a83d42e0",
+		"name": "deck-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/decks/?shuffle={{shuffle}}&cards={{cards}}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/decks/?shuffle={{shuffle}}&cards={{cards}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"decks",
+						""
+					],
+					"query": [
+						{
+							"key": "shuffle",
+							"value": "{{shuffle}}",
+							"description": "Defines if the deck should be suffled or not."
+						},
+						{
+							"key": "cards",
+							"value": "{{cards}}",
+							"description": "Fill this property to create a custom deck."
+						}
+					]
+				},
+				"description": "Resource to create a new custom / standard deck that can be shuffled or not."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/decks/{{deck_id}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/decks/{{deck_id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"decks",
+						"{{deck_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/decks/889b4dfc-5119-4038-a3f1-faa4b7c10c56/draw/?count=1",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/decks/889b4dfc-5119-4038-a3f1-faa4b7c10c56/draw/?count=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"decks",
+						"889b4dfc-5119-4038-a3f1-faa4b7c10c56",
+						"draw",
+						""
+					],
+					"query": [
+						{
+							"key": "count",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Resource to draw cards from a deck."
+			},
+			"response": []
+		}
+	]
+}
