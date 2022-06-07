@@ -76,4 +76,4 @@ There are a couple of improvements which could be done with more time:
   to organize the code. For this challenge I just kept the structures in the root, to make the code review easier and
   also, to avoid misunderstandings.
 
-*At the business side, I would implement a rule to avoid insert duplicated cards on partial decks.
+*At the business side, I would implement a rule to avoid inserting duplicated cards on partial decks.
