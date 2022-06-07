@@ -64,7 +64,7 @@
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/decks/889b4dfc-5119-4038-a3f1-faa4b7c10c56/draw/?count=1",
+					"raw": "http://localhost:8080/decks/{{deck_id}}/draw/?count={{count}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -72,20 +72,27 @@
 					"port": "8080",
 					"path": [
 						"decks",
-						"889b4dfc-5119-4038-a3f1-faa4b7c10c56",
+						"{{deck_id}}",
 						"draw",
 						""
 					],
 					"query": [
 						{
 							"key": "count",
-							"value": "1"
+							"value": "{{count}}",
+							"description": "Defines how many cards will be drawn."
 						}
 					]
 				},
 				"description": "Resource to draw cards from a deck."
 			},
 			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "count",
+			"value": "1"
 		}
 	]
 }
