@@ -11,7 +11,7 @@ fmt: ## Format Code
 lint: ## Run linter
 	docker run --rm -v $(PWD):/app -w /app golangci/golangci-lint:v1.46.0 golangci-lint run -v
 
-mock: ## Generate mocks
+mocks: ## Generate mocks
 	docker run --rm -v "$(PWD):/app" -w /app/test -t vektra/mockery --all --dir /app/repositories --case underscore
 	docker run --rm -v "$(PWD):/app" -w /app/test -t vektra/mockery --all --dir /app/usecases --case underscore
 

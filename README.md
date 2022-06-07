@@ -20,10 +20,13 @@ Thank you for your time reviewing this code :)
 This project contains a [make](Makefile) file to make it easy. To execute the application, just execute the
 command `make start` or `docker-compose up -d`.
 
+To reinforce the good practices of code formatting, the lint and some other tools can be executed
+through [make](Makefile) file.
+
 ## Tests
 
 The tests could be executed by your favorite IDE or executing the command `make tests` or even executing `go test ./...`
-.
+. To generated the mocks, execute `make mocks`.
 
 ## API
 

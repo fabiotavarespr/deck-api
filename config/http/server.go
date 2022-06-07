@@ -10,13 +10,13 @@ import (
 )
 
 // SetupHTTPServer configure a new router for Handler implementations (to make it easy to add more Handlers).
-// TODO: Include env vars.
 func SetupHTTPServer(handlers ...handlers.Handler) *http.Server {
 	router := gin.Default()
 	for _, handler := range handlers {
 		handler.Routes(router)
 	}
 
+	// TODO: Include env vars.
 	return &http.Server{
 		Addr:         ":8080",
 		Handler:      router,

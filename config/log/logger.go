@@ -8,8 +8,8 @@ import (
 )
 
 // SetupLogger configure a global zap logger.
-// TODO: Include env vars.
 func SetupLogger() {
+	// TODO: Include env vars.
 	config := zap.NewProductionConfig()
 	config.Level = zap.NewAtomicLevelAt(zapcore.InfoLevel)
 

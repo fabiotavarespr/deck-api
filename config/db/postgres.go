@@ -7,8 +7,8 @@ import (
 )
 
 // SetupDB configure a new connection using gorm.
-// TODO: Include env vars.
 func SetupDB() (*gorm.DB, error) {
+	// TODO: Include env vars.
 	db, err := gorm.Open("postgres", "host=database port=5432 user=postgres dbname=deck password=postgres sslmode=disable")
 	if err != nil {
 		return nil, err
