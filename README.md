@@ -26,7 +26,7 @@ through [make](Makefile) file.
 ## Tests
 
 The tests could be executed by your favorite IDE or executing the command `make tests` or even executing `go test ./...`
-. To generated the mocks, execute `make mocks`.
+. To generate the mocks, execute `make mocks`.
 
 ## API
 
