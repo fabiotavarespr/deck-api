@@ -19,9 +19,10 @@ const (
 	CountParam   = "count"
 	IDParam      = "id"
 
-	ErrInvalidShuffleParam = "Invalid shuffle parameter"
-	ErrInvalidCountParam   = "Invalid count parameter"
-	ErrInvalidID           = "Invalid id"
+	ErrInvalidShuffleParam    = "Invalid shuffle parameter"
+	ErrInvalidCountParam      = "Invalid count parameter"
+	ErrInvalidCountParamRange = "Count parameter value be between 1 and 52"
+	ErrInvalidID              = "Invalid id"
 )
 
 type DeckHandler struct {
@@ -86,8 +87,12 @@ func (h DeckHandler) Open(context *gin.Context) {
 func (h DeckHandler) Draw(context *gin.Context) {
 	countParam := context.DefaultQuery(CountParam, "1")
 	count, err := strconv.Atoi(countParam)
-	if err != nil || count < 1 || count > 52 {
+	if err != nil {
 		context.JSON(http.StatusBadRequest, ErrInvalidCountParam)
+		return
+	}
+	if count < 1 || count > 52 {
+		context.JSON(http.StatusBadRequest, ErrInvalidCountParamRange)
 		return
 	}
 

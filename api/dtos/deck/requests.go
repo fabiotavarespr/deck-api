@@ -5,7 +5,6 @@ import (
 	"deck-api/models"
 )
 
-// CreateRequest represents the entries to crate a new Deck.
 type CreateRequest struct {
 	Cards   []string
 	Shuffle bool
