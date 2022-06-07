@@ -1,5 +1,5 @@
 # Prepare
-FROM golang:1.17.0-alpine AS prepare
+FROM golang:1.18.0-alpine AS prepare
 WORKDIR /source
 COPY go.mod go.sum /source/
 RUN go mod download
