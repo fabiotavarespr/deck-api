@@ -25,8 +25,8 @@ const (
 )
 
 var (
-	suitsSequence = []string{Spades, Diamonds, Clubs, Hearts}
-	cardsSequence = []string{Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King}
+	valuesSequence = []string{Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King}
+	suitsSequence  = []string{Spades, Diamonds, Clubs, Hearts}
 )
 
 type Card struct {

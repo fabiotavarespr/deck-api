@@ -40,7 +40,7 @@ func NewDeck(cards []Card) (Deck, error) {
 func newStandardDeck() Deck {
 	var cards []string
 	for _, suit := range suitsSequence {
-		for _, value := range cardsSequence {
+		for _, value := range valuesSequence {
 			code := value + suit
 			cards = append(cards, code)
 		}
